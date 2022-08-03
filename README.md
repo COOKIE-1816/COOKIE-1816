@@ -6,7 +6,7 @@
 [![twitter](https://img.shields.io/badge/Twitter-1da1f2?style=for-the-badge&logo=Twitter&logoColor=white)](https://www.instagram.com/cookie_1816_/)
 
 📎 You can reach me on social media and email using badges above.  
-⌚ I always try to be able to be reached 24/7 
+⌚ I always try to be able to be reached 24/7 but it is not possible all the time
 
 <!---
 - 👋 Hi, I’m @COOKIE-1816
