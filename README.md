@@ -31,5 +31,5 @@ You can click the Preview link to take a look at your changes.
 
 🫀 If You are interested in collaboration with me, **don't be afraid of [contacting me](https://github.com/COOKIE-1816/COOKIE-1816/edit/main/README.md#how-to-reach-me)!**  
 📂 We can collaborate together on **every project** i am working on.  
-💞 We also can **collaborate on your** projects with no exceptations. Just contact me.
+💞 We also can **collaborate on your** projects with no exceptations. Just contact me.  
 ❤️ Need help?
