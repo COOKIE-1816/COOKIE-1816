@@ -1,3 +1,6 @@
+![github](https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=GitHub&logoColor=white)
+![instagram](https://img.shields.io/badge/Instagram-a700aa?style=for-the-badge&logo=Instagram&logoColor=white)
+
 - 👋 Hi, I’m @COOKIE-1816
 - 👀 I’m interested in js, python, C, C++, C#, java, bash
 - 🌱 I’m currently learning R and Go
