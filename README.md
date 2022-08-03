@@ -30,4 +30,6 @@ You can click the Preview link to take a look at your changes.
 - 🖌️ I am currently looking for **graphics designers** to design things such as **icons, wallpaper, backgrounds, stylesheets, videogame characters**, because i am not too good in graphical design at all.
 
 🫀 If You are interested in collaboration with me, **don't be afraid of [contacting me](https://github.com/COOKIE-1816/COOKIE-1816/edit/main/README.md#how-to-reach-me)!**  
-📂 We can collaborate together on **every project** i am working on. With no exceptations.
+📂 We can collaborate together on **every project** i am working on.  
+💞 We also can **collaborate on your** projects with no exceptations. Just contact me.
+❤️ Need help?
