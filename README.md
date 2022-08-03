@@ -1,3 +1,9 @@
+# About me
+🇨🇿 I live in Prague city in the Czech Republic.  
+👀 I enjoy programming a free, **open-source** and useful software in programming languages like **Python, JavaScript, Java, C, C++**, assembly and even more.  
+🚶‍♂️ I love to enjoy having good time with my friends out, sometimes somewhere like in the woods.  
+✈️ I like **travelling** but i did not ever get out of the Czech Republic but planned to **arive somewhere near to the sea**.
+
 # How to reach me?
 [![github](https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=GitHub&logoColor=white)](https://github.com/COOKIE-1816)
 [![email](https://img.shields.io/badge/Email-ff0000?style=for-the-badge&logo=Gmail&logoColor=white)](mailto:1816.cookie1816@gmail.com)
