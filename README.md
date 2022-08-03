@@ -1,3 +1,4 @@
+![banner](https://user-images.githubusercontent.com/93037688/182573005-eecdd57f-121a-475c-ad6b-96088072d387.png)
 # About me
 🇨🇿 I live in Prague city in the Czech Republic.  
 👀 I enjoy programming a free, **open-source** and useful software in programming languages like **Python, JavaScript, Java, C, C++**, assembly and even more.  
