@@ -1,5 +1,5 @@
 [![github](https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=GitHub&logoColor=white)](https://github.com/COOKIE-1816)
-![instagram](https://img.shields.io/badge/Instagram-a700aa?style=for-the-badge&logo=Instagram&logoColor=white)
+[![instagram](https://img.shields.io/badge/Instagram-a700aa?style=for-the-badge&logo=Instagram&logoColor=white)](https://www.instagram.com/cookie_1816_/)
 
 - 👋 Hi, I’m @COOKIE-1816
 - 👀 I’m interested in js, python, C, C++, C#, java, bash
