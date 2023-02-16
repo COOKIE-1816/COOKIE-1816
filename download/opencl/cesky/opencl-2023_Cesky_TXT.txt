@@ -1,0 +1,34 @@
+SOFTWAROVA LICENCE OPENCL
+-------------------------------------------------------
+        Tento soubor je licenci pro open-source software. Stanovuje pravidla o tom, jak smi byt se zdrojovym kodem
+    nakladano. Tato licence se vsak vztahuje tez na jiny textovy ci graficky obsah (tedy napriklad na ikony,
+    animace, stylesheety, HTML stranky, zvukove efekty a podobne), ktery byl pouzit v produktu a tez je majetkem
+    autora.
+
+        Copyright: (C) <rok> <jmeno autora>
+	Nazev produktu: <nazev produktu>
+
+	Ackoliv je tento produkt open-source (tedy ma verejny, volne dostupny kod), stale plati pravidla autora.
+
+
+	1. POUZITI ZDROJOVEHO KODU
+        Mate pravo zdrojovy kod sirit, jakkoliv modifikovat a publikovat jeho modifikovanou verzi, pripadne
+        pouzit jako soucast (zavislost) jineho produktu.
+        Mate vsak povinnost uvedst nazev originalniho produktu a jmeno jeho autora, uvedst, zda byly provedeny
+        zmeny (pokud ano, jake) a poskytnout odkaz (adresu URL) na repozitar ci webove stranky originalniho
+        produktu. Dale modifikovana verze musi byt stejne licence, jako je originalni produkt.
+        
+        V pripade pouziti jako zavislost, mate narok na pouzizi jakekoliv jine licence, ale zdrojovy kod musi byt
+        verejne dostupny, ale bez ohledu na licenci musi dodrzovat pravidla clanku 2 teto licence.
+
+	2. ZA UCELEM OCHRANY DETI A CITLIVYCH JEDINCU
+        produkt nesmi obsahovat zadny obsah pro dospele (tedy napr. sex ci pornografii, alkohol, drogy, a podobne)
+        ani jiny choulostivy obsah jako napr. urazy, umrti, atd. - Mysleme prosim na ostatni - nikomu, prosim,
+        neublizujme a nekazme detem jejich detstvi!!!
+
+	3. ZARUKA
+        autor/autori neposkytuji zadnou zaruku jakehokoliv druhu, pokud sami neuvedou jinak.
+
+	4. POUZITI HOTOVEHO PRODUKTU
+        kdokoliv je opravnen pouzivat tento produkt pro jakykoliv ucel a to bez vyzadovani jakychkoliv
+        poplatku -> zdarma.
