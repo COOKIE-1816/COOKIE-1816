@@ -1,0 +1,211 @@
+                            +----------------------------------+
+                            |  GRAFICKA KARTA CCMB-V1g1M1024k  |
+                            |   PRIRUCKA UZIVATELE V CESTINE   |
+                            +----------------------------------+
+
+Vazeny novy uzivateli graficke karty,
+dekujeme Vam, ze jste si vybrali zrovna nasi grafickou kartu.
+
+Doufame, ze budete s nasi grafickou kartou spokojeni, a uzijete si jeji pouzivani stejne tak,
+jako my jsme si uzili jeji vyvoj.
+
+V tomto navodu se dozvite, jak nainstalovat a pouzivat sestavenou grafickou kartu. Pokud
+nevite, jak grafickou kartu sestavit, stahnete si navod k sestaveni z nasich webovych 
+stranek <1>
+                                                              Prejeme Vam prijemne pouziti :)
+
++-------------------------------------------------------------------------------------------+
+|                                         VAROVANI                                          |
+|                                                                                           |
+| Mejte prosim na vedomi, ze tato graficka karta je stale v experimentalnim stadiu, neni    |
+| tedy zaruceno, ze bude pracovat zcela podle ocekavani a popisu funkce (viz. dokumentace). |
+|                                                                                           |
+| Ackoliv by se to stavat nemelo, je take mozne, ze pri nespravnem pouziti graficka karta   |
+| zpusobi poskozeni sebe sama, pripadne vaseho pocitace nebo jeho ostatnich soucasti a      |
+| prislusenstvi k nemu pripojenemu.                                                         |
+|                                                                                           |
+| Pouzivejte prosim grafickou kartu opatrne.                                                |
+| Dekujeme Vam za pochopeni.                                                                |
++-------------------------------------------------------------------------------------------+
+
++-------------------------------------------------------------------------------------------+
+|                                         VAROVANI                                          |
+|                                                                                           |
+| Slozili jste grafickou kartu kompatibilni s pocitacem se zakladni deskou CCMB1g1,         |
+| nikoliv s beznym pocitacem.                                                               |
++-------------------------------------------------------------------------------------------+
+
+OBSAH:
+    [1] Zakladni informace o graficke karte (parametry)
+    [2] Instalace firmwaru graficke karty
+    [3] Instalace OEM obrazku
+    [4] Instalace graficke karty do pocitace
+    [5] Pripojeni monitoru
+    [6] CCMB video toolchain
+    [7] Pridavna pamet video-ram
+
+=============================================================================================
+
+    [1] Zakladni informace o graficke karte (parametry)
+
+              KAPACITA VIDEO-RAM  256KiB x 4 (celkem 1024KiB, 1MiB)
+        PRIDAVNE SLOTY VIDEO-RAM  2 (+ 512KiB, 0,5MiB)
+                             MCU  Atmel (R) ATMega8A-AU
+             TAKTOVACI FREKVENCE  16.0 Megahertz (MHz)
+                        ROZHRANI  Composite AV
+             MAXIMALNI ROZLISENI  800x600
+                       BAREVNOST  64
+
+    [2] Instalace firmwaru graficke karty
+        KROK 1  naklonujte git repozitar <3> se zdrojovym kodem na bezny 
+                pocitac a zdrojovy kod zkompilujte.
+
+                +---------------------------------------------------------------------------+
+                | $ git clone https://github.com/COOKIE-1816/ccmb-video-firmware.git        |
+                | $ cd ccmb-video-firmware                                                  |
+                | $ sh ./build-linux.sh                                                     |
+                +---------------------------------------------------------------------------+
+
+        KROK 2  Vyjmete cip MCU a vlozte ho do programovaciho zarizeni pripojeneho k beznemu
+                pocitaci s operacnim systemem Linux.
+
+        KROK 3  Pomoci programu avrdude <4> nahrajte binarni soubory na flash pamet chipu
+                MCU.
+
+                +---------------------------------------------------------------------------+
+                | $ sudo avrdude -v -p atmega8a -c usbasp -P /dev/ttyUSB0 -b 9600 -D -U fla |
+                | sh:w:./bin/main.cpp.hex:i                                                 |
+                +---------------------------------------------------------------------------+
+        
+        KROK 4  Odpojte chip a vlozte ho zpatky tam, kde byl na graficke karte.
+
+    [3] Instalace OEM obrazku
+
+        +-----------------------------------------------------------------------------------+
+        |                                      VAROVANI                                     |
+        |                                                                                   |
+        | Pokud pocitac bude pouzivan pro nesoukrome ucely nebo bude prodan, budete muset   |
+        | tyto kroky provedst, aby jste vyhoveli licenci.                                   |
+        +-----------------------------------------------------------------------------------+
+
+        Tuto cast neni nutne provedst, pokud se chystate pouzivat pocitac pro vlastni, 
+        soukrome ucely. V opacnem pripade je nutne nainstalovat logo graficke karty <5>.
+
+        Muzete take nainstalovat OEM logo sve znacky atd., ale nezapomente, ze logo graficke
+        karty musi byt take videt. Muzete napr. vytvorit obrazek, kde budou loga vedle sebe.
+
+        Obrazek musi mit rozliseni maximalne 800x600 pixelu a jeho barvy musi byt v souladu
+        s barevnou paletou o barevnosti 64 barev <6>, aby se mohl bez problemu zobrazit.
+
+        KROK 1  Obstarejte si nepruhledny obrazek PNG. Na logo graficke karty odkazuje
+                odkaz c. 5.
+        
+        KROK 2  Vyjmete cip MCU a vlozte ho do programovaciho zarizeni pripojeneho k beznemu
+                pocitaci s operacnim systemem Linux.
+        
+        KROK 3  Pomoci Python skriptu convert.py obsazeneho v klicence 
+                ccmb-video-toolchain <7>, prevedte obrazek PNG do binarniho souboru.
+
+                Po spusteni skriptu se obevi dialogove okno, ktere bude pozadovat nazev
+                souboru (a cestu k nemu). 
+
+                +---------------------------------------------------------------------------+
+                | $ git clone https://github.com/COOKIE-1816/ccmb-video-toolchain.git       |
+                | $ cd ccmb-video-toolchain                                                 |
+                | $ python ./convert.py                                                     |
+                +---------------------------------------------------------------------------+
+        
+        KROK 4  Vytvori se soubor, ktery nese stejny nazev jako originalni soubor, ale konci
+                priponou ".bin".
+
+        KROK 5  Pomoci programu avrdude <4> nahrajte tento binarni soubor na EEPROM pamet
+                chipu MCU.
+
+                +---------------------------------------------------------------------------+
+                |                                  VAROVANI                                 |
+                |                                                                           |
+                | Budte si jisti obrazkem, ktery chcete na EEPROM pamet nahrat.             |
+                | Pameti EEPROM maji malou zivotnost, tedy nizky pocet zapisu, ktere lze    |
+                | provedst, nez pamet prestane fungovat!                                    |
+                +---------------------------------------------------------------------------+
+
+                +---------------------------------------------------------------------------+
+                | $ sudo avrdude -v -p atmega8a -c usbasp -P /dev/ttyUSB0 -b 9600 -D -U eep |
+                | rom:w:./soubor.png.bin:i                                                  |
+                +---------------------------------------------------------------------------+
+
+        KROK 6  Odpojte chip a vlozte ho tam, kde byl na graficke karte.
+
+        Tento obrazek se nyni bude zobrazovat po kazde, co se graficka karta zacne napajet a 
+        bude zobrazen po dobu minimalne 1/2 sekundy (500 milisekund) nebo dokud graficka
+        karta neobdrzi prikaz k inicializaci.
+    
+    [4] Instalace graficke karty do pocitace
+        Tato graficka karta lze nainstalovat do libovolneho spravne sestaveneho pocitace se
+        zakladni deskou CCMB.
+
+        +-----------------------------------------------------------------------------------+
+        |                                      VAROVANI                                     |
+        |                                                                                   |
+        | Pred instalaci se, prosim, ujistete, ze je cely pocitac (vcetne jeho soucasti a   |
+        | jakehokoliv pripadneho prislusenstvi) spravne sestaven a neobsahuje zadne         |
+        | viditelne zavady. Tim minimalizujete riziko nebo zavaznost pripadneho poskozeni.  |
+        | Totez plati i pro grafickou kartu samotnou.                                       |
+        +-----------------------------------------------------------------------------------+
+
+        KROK 1  Ujistete se, ze je pristroj zcela vypnut a odpojen od napajeni. Pripadna CMOS
+                baterie muze zustat pritomna.
+        
+        KROK 2  Pokud je pritomna vana pro soucasti pocitace, vsunte grafickou kartu do slotu
+                pro grafickou kartu, vetsinou oznacovan jako AGK (adapter pro grafickou 
+                kartu). Pokud tento slot neni pritomen, ale graficka karta je podporovana,
+                vsunte grafickou kartu do jakehokoliv jineho slotu.
+
+                Pokud neni, budete muset pripojit grafickou kartu do portu pro AGK 
+                prostrednictvim nekolika kabelu.
+
+        KROK 3  Zapnete pocitac. Vyckejte, az zacne blikat zluta dioda na zakladni desce.
+                Zatimco dioda blika, stisknete a podrzte klavesu F3 na klavesnici, dokud
+                nebude neprerusovane svitit a nebude blikat zelena dioda.
+
+                Timto pridelite systemu BIOS pokyn k tomu, ze ma shromazdit informace o
+                pritomnem hardwaru, a zapsat je na pamet EEPROM.
+        
+        KROK 4  Nyni stisknete tlacitko RESET na zakladni desce.
+
+        Timto by mela byt graficka karta nainstalovana. Je mozne, ze operacni system, ktery
+        pouzivate, nema predinstalovane ovladace (drivery) pro grafickou kartu, ktere urcuji,
+        jak ma system grafickou kartu pouzivat. Pro instalaci driveru se, prosim, obratte na
+        vyrobce vaseho zarizeni nebo na dokumentace operacniho systemu, pripadne na sveho
+        administratora, ktery Vam poskytne dalsi pokyny.
+
+    [5] Pripojeni monitoru
+        Pro zobrazeni je nutne pripojit grafickou kartu k monitoru pomoci kabelu Composite
+        AV.
+    
+    [6] CCMB video toolchain
+        CCMB video toolchain <7> je sada nastroju ke sprave, udrzbe, kontrole a ovladani
+        graficke karty pres rozhrani USART s pocitacem s operacnim systemem Linux.
+
+        Dalsi informace a instrukce pro CCMB video toolchain naleznete na jeho strankach <7>.
+    
+    [7] Pridavna pamet video-ram
+        Pokud zjistite potize s grafickou kartou (barevnost, rozliseni, rychlost, problemy s
+        3D akceleraci, atd.), nekdy muze pomoci pridani pridavne pameti video-ram.
+
+        Karta obsahuje 2 sloty na pridavnou video-ram pamet. Graficka karta vsak podporuje
+        jeden jediny chip (v jakemkoliv mnozstvi, ktere karta umoznuje), a tim je 23K256-I/P.
+        
+        Jeden tento chip ma kapacitu 256KiB (0,2MiB) a muze byt pripojen az 2x, cimz muze
+        vzniknout pridavna pamet 512KiB (0,5MiB) a celkem tedy 1536 KiB celkove pameti
+        video-ram.
+
+
+===========================================  ODKAZY  ========================================
+
+<1> https://github.com/COOKIE-1816/COOKIE-1816/downloads/ccmb-V1g1M1024k/sestaveni.pdf
+<3> https://github.com/COOKIE-1816/ccmb-video-firmware.git
+<4> https://www.nongnu.org/avrdude/
+<5> https://czechcookie.euweb.com/graficke-karty/CCMB-V1g1M1024k/logo.png
+<6> https://czechcookie.euweb.com/graficke-karty/barevnost/#4
+<7> https://czechcookie.euweb.com/graficke-karty/ccmb-toolchain/
