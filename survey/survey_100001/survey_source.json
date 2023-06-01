@@ -1,0 +1,119 @@
+{
+  "survey_info_surveyName": "Cookie Survey test survey",
+  
+  "survey_responses_limitForRelation": 5,
+  "survey_responses_allowedRelations": [
+    "000000", "012345", "123456", "1a1a1a", "abcdef"
+  ],
+  
+  "survey_responses_saveToDataBase": true,
+  "survey_responses_allowReview": true,
+  "survey_responses_rating_allowRating": true,
+  "survey_responses_rating_maxScore": 10,
+  
+  "survey_formBody_elements": [
+    {
+      "element_type": "textField",
+      "element_body": "Hello! This is a test survey!"
+    },
+    {
+      "element_type": "textPrompt",
+      "element_title": "Text prompt",
+      "element_question": "You can type anything to prompt below.",
+      "element_score": 5,
+      "element_required": true
+    },
+    {
+      "element_type": "paragraphPrompt",
+      "element_title": "Paragraph prompt",
+      "element_question": "You can type something very long here",
+      "element_score": 5,
+      "element_required": false
+    },
+    {
+      "element_type": "numberPrompt",
+      "element_title": "Number prompt",
+      "element_question": "You can type any number here",
+      "element_score": 0,
+      "element_required": true
+    },
+    {
+      "element_type": "dropdownSelect",
+      "element_title": "Drop-down selector",
+      "element_question": "You can select something from dropdown below",
+      "element_score": 0,
+      "element_required": false,
+      "element_options": [
+        "Option 1",
+        "Option 2"
+      ]
+    },
+    {
+      "element_type": "ratioSelect",
+      "element_title": "Ratio select",
+      "element_question": "You can select one option from below",
+      "element_score": 0,
+      "element_required": true,
+      "element_options": [
+        "Option 1",
+        "Option 2"
+      ]
+    },
+    {
+      "element_type": "checkBoxSelect",
+      "element_title": "Check-box select",
+      "element_question": "You can select multiple options from below",
+      "element_score": 0,
+      "element_required": false,
+      "element_options": [
+        "Option 1",
+        "Option 2"
+      ]
+    },
+    {
+      "element_type": "progressBar",
+      "element_title": "Progress bar",
+      "element_question": "You can select any number from scale from 1 to 20"
+      "element_score": 0,
+      "element_required": true,
+      "element_min": 1,
+      "element_max": 20
+    },
+    {
+      "element_type": "rating",
+      "element_title": "Rating stars",
+      "element_question": "How many stars are you going to rate us with?",
+      "element_score": 0,
+      "element_required": false,
+      "element_maxStars": 5,
+      "element_enableHalfStars": true
+    },
+    {
+      "element_type": "linkPrompt",
+      "element_title": "Link prompt",
+      "element_question": "Paste link address here.",
+      "element_score": 0,
+      "element_required": true
+    },
+    {
+      "element_type": "dragndrop",
+      "element_title": "Drag-and-drop list",
+      "element_question": "Drag list elements to the correct order",
+      "element_score": 0,
+      "element_required": false,
+      "element_options": [
+        "Option 1",
+        "Option 2",
+        "Option 3"
+      ]
+    },
+    {
+      "element_type": "image",
+      "element_title": "Image",
+      "element_question": "What a beautiful image, isnt it?",
+      "element_score": 0,
+      "element_required": true,
+      "element_src": "http://czechcookie.euweb.com/res/branding/logo.bmp"
+    }
+  ]
+}
