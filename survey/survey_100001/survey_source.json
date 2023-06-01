@@ -73,7 +73,7 @@
     {
       "element_type": "progressBar",
       "element_title": "Progress bar",
-      "element_question": "You can select any number from scale from 1 to 20"
+      "element_question": "You can select any number from scale from 1 to 20",
       "element_score": 0,
       "element_required": true,
       "element_min": 1,
